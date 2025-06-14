@@ -34,3 +34,5 @@ python -m ipykernel install --user --name rl-env --display-name "Python (RL Env)
 
 4. Reiniciar el kernel en SageMaker y eligir: Python (RL Env) 
     # Sale a arriba a la derecha en la pestaña en la que se tiene abiertio el .ipynb
+
+IMPORTANTE: Ejecutar en paralelo "upload_weights" para que se suban los pesos al repositorio. Ahora mismo está puesto a un checkeo cada minuto.
