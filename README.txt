@@ -3,7 +3,7 @@ Para clonar el repo:
 En SageMaker ir a Git->Clone Git Repostory->https://github.com/itssaricii/proyecto-AR
 
 Para subir cambios:
-git add -u (añade todos los cambios de los ficheros )
+git add -u (añade todos los cambios de los ficheros. Esto solo añade ficheros ya rastreados. Nosotros generamos nuevos archivos de pesos con los checkpoints --> Es más recomendable "git add .")
 git add ruta/al/fichero (añadir un fichero que no esté todavía en git)
 git commit -m "NOMBRE:comentarios" (para describir lo que hay en el commit)
 git push (para subir cambios)
@@ -36,3 +36,5 @@ python -m ipykernel install --user --name rl-env --display-name "Python (RL Env)
     # Sale a arriba a la derecha en la pestaña en la que se tiene abiertio el .ipynb
 
 IMPORTANTE: Ejecutar en paralelo "upload_weights" para que se suban los pesos al repositorio. Ahora mismo está puesto a un checkeo cada minuto.
+
+SUPER IMPORTANTE: No os fieis del tiempo de sagemaker y antes de que se os acabe el tiempo, cortad el kernel manualmente y subid los cambios a git, porque de lo contrario, perdeis todo el progreso.
