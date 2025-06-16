@@ -38,3 +38,28 @@ python -m ipykernel install --user --name rl-env --display-name "Python (RL Env)
 IMPORTANTE: Ejecutar en paralelo "upload_weights" para que se suban los pesos al repositorio. Ahora mismo está puesto a un checkeo cada minuto.
 
 SUPER IMPORTANTE: No os fieis del tiempo de sagemaker y antes de que se os acabe el tiempo, cortad el kernel manualmente y subid los cambios a git, porque de lo contrario, perdeis todo el progreso.
+
+### TRICKS PARA COLAB ###
+Para que podáis dejar el colab entrenando y no os cierre la sesión por inactividad del navegador.
+En Chrome:
+1. Abrid el notebook en colab (Abrir--> Desde github)
+2. Ctrl+Mayus+I para abrir las herramientas de desarrollador
+3. En Consola abajo escribid 'allow pasting' y darle a enter
+4. Pegad el siguiente javascript:
+
+function ClickConnect() {
+    var iconElement = document.getElementById("toggle-header-button");
+    if (iconElement) {
+        var clickEvent = new MouseEvent("click", {
+            bubbles: true,
+            cancelable: true,
+            view: window
+        });
+        iconElement.dispatchEvent(clickEvent);
+    }
+}
+
+setInterval(ClickConnect, 6000);
+
+5. Veréis que cada 6 segundos la pantalla se desplaza abajo y arriba un poco alternativamente, 
+esto debería ser suficiente para que Colab considere que estáis en la sesion aún.
